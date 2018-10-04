@@ -26,9 +26,9 @@ class Bin(object):
         self.size = size
         
 #===============IMPORT DATA===============
-items_data = np.loadtxt('set2-items.txt', dtype = np.integer, delimiter=',')
-bins_data = np.loadtxt('set2-bins.txt', dtype = np.integer, delimiter=',')
-alloc_constraint = np.loadtxt('set2-alloc-constraint.txt', dtype = np.integer, delimiter=',')
+items_data = np.loadtxt('set1-items.txt', dtype = np.integer, delimiter=',')
+bins_data = np.loadtxt('set1-bins.txt', dtype = np.integer, delimiter=',')
+alloc_constraint = np.loadtxt('set1-alloc-constraint.txt', dtype = np.integer, delimiter=',')
         
 #===============INITIALIZE DATA===============   
 #items        
