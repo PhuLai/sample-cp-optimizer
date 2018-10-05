@@ -11,7 +11,9 @@ Objective:
     - Maximize the number of allocated items
     
 """
-from docplex.cp.model import CpoModel
+from docplex.cp.model import *
+from docplex.cp.modeler import *
+from docplex.cp.solution import *
 import numpy as np
 import pandas as pd
     
