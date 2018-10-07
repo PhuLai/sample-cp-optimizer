@@ -1,0 +1,20 @@
+ ! ----------------------------------------------------------------------------
+ ! Maximization problem - 2 variables, 4 constraints
+ ! Initial process time : 0.00s (0.00s extraction + 0.00s propagation)
+ !  . Log search space  : 1.0 (before), 1.0 (after)
+ !  . Memory usage      : 301.9 kB (before), 301.9 kB (after)
+ ! Using parallel search with 4 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0          2                 -
+ + New bound is 6
+ ! ----------------------------------------------------------------------------
+ ! Search completed, model has no solution.
+ ! Best bound             : 6
+ ! Number of branches     : 0
+ ! Number of fails        : 0
+ ! Total memory usage     : 470.1 kB (429.5 kB CP Optimizer + 40.6 kB Concert)
+ ! Time spent in solve    : 0.00s (0.00s engine + 0.00s extraction)
+ ! Search speed (br. / s) : 0
+ ! ----------------------------------------------------------------------------
+

@@ -1,0 +1,20 @@
+///////////////////////////////////////////////////////////////////////////////
+// CPO file generated for model: bin-packing-variant
+// Source file: C:/Users/tlai/Desktop/workspace-spyder/sample-cp-optimizer/bin-packing-variant-v1.py
+///////////////////////////////////////////////////////////////////////////////
+
+//--- Variables ---
+_INT_145 = intVar(0, 2);
+_INT_144 = intVar(2);
+
+//--- Expressions ---
+#line 74 "C:/Users/tlai/Desktop/workspace-spyder/sample-cp-optimizer/bin-packing-variant-v1.py"
+_EXP_57 = [1, 1];
+_EXP_59 = [_INT_144, _INT_145];
+pack([sum([(_INT_144 == 0) * 1, (_INT_145 == 0) * 1]) <= 2, sum([(_INT_144 == 1) * 1, (_INT_145 == 1) * 1]) <= 0, sum([(_INT_144 == 2) * 1, (_INT_145 == 2) * 1]) <= 1], _EXP_59, _EXP_57);
+pack([sum([(_INT_144 == 0) * 1, (_INT_145 == 0) * 1]) <= 1, sum([(_INT_144 == 1) * 1, (_INT_145 == 1) * 1]) <= 3, sum([(_INT_144 == 2) * 1, (_INT_145 == 2) * 1]) <= 2], _EXP_59, _EXP_57);
+pack([sum([(_INT_144 == 0) * 1, (_INT_145 == 0) * 1]) <= 1, sum([(_INT_144 == 1) * 1, (_INT_145 == 1) * 1]) <= 1, sum([(_INT_144 == 2) * 1, (_INT_145 == 2) * 1]) <= 1], _EXP_59, _EXP_57);
+_EXP_60 = [4, 4];
+pack([sum([(_INT_144 == 0) * 4, (_INT_145 == 0) * 4]) <= 5, sum([(_INT_144 == 1) * 4, (_INT_145 == 1) * 4]) <= 1, sum([(_INT_144 == 2) * 4, (_INT_145 == 2) * 4]) <= 6], _EXP_59, _EXP_60);
+#line 80
+maximize(sum([_INT_144 == 0, _INT_145 == 0, _INT_144 == 1, _INT_145 == 1, _INT_144 == 2, _INT_145 == 2]));
