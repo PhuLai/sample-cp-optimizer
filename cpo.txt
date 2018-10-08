@@ -1,20 +1,34 @@
 ///////////////////////////////////////////////////////////////////////////////
 // CPO file generated for model: bin-packing-variant
-// Source file: C:/Users/tlai/Desktop/workspace-spyder/sample-cp-optimizer/bin-packing-variant-v1.py
+// Source file: D:/workspace-spyder/sample-cp-optimizer/bin-packing-variant-v1.py
 ///////////////////////////////////////////////////////////////////////////////
 
 //--- Variables ---
-_INT_145 = intVar(0, 2);
-_INT_144 = intVar(2);
+whereItem1 = intVar(0, 2);
+whereItem0 = intVar(2);
+"sizeBin2,d0" = intVar(0..2);
+"sizeBin1,d0" = intVar(0..1);
+"sizeBin0,d0" = intVar(0..3);
+"sizeBin2,d1" = intVar(0..1);
+"sizeBin1,d1" = intVar(0..3);
+"sizeBin0,d1" = intVar(0..2);
+"sizeBin2,d2" = intVar(0..8);
+"sizeBin1,d2" = intVar(0..5);
+"sizeBin0,d2" = intVar(0..3);
+"sizeBin2,d3" = intVar(0..4);
+"sizeBin1,d3" = intVar(0..5);
+"sizeBin0,d3" = intVar(0..8);
 
 //--- Expressions ---
-#line 74 "C:/Users/tlai/Desktop/workspace-spyder/sample-cp-optimizer/bin-packing-variant-v1.py"
-_EXP_57 = [1, 1];
-_EXP_59 = [_INT_144, _INT_145];
-pack([sum([(_INT_144 == 0) * 1, (_INT_145 == 0) * 1]) <= 2, sum([(_INT_144 == 1) * 1, (_INT_145 == 1) * 1]) <= 0, sum([(_INT_144 == 2) * 1, (_INT_145 == 2) * 1]) <= 1], _EXP_59, _EXP_57);
-pack([sum([(_INT_144 == 0) * 1, (_INT_145 == 0) * 1]) <= 1, sum([(_INT_144 == 1) * 1, (_INT_145 == 1) * 1]) <= 3, sum([(_INT_144 == 2) * 1, (_INT_145 == 2) * 1]) <= 2], _EXP_59, _EXP_57);
-pack([sum([(_INT_144 == 0) * 1, (_INT_145 == 0) * 1]) <= 1, sum([(_INT_144 == 1) * 1, (_INT_145 == 1) * 1]) <= 1, sum([(_INT_144 == 2) * 1, (_INT_145 == 2) * 1]) <= 1], _EXP_59, _EXP_57);
-_EXP_60 = [4, 4];
-pack([sum([(_INT_144 == 0) * 4, (_INT_145 == 0) * 4]) <= 5, sum([(_INT_144 == 1) * 4, (_INT_145 == 1) * 4]) <= 1, sum([(_INT_144 == 2) * 4, (_INT_145 == 2) * 4]) <= 6], _EXP_59, _EXP_60);
-#line 80
-maximize(sum([_INT_144 == 0, _INT_145 == 0, _INT_144 == 1, _INT_145 == 1, _INT_144 == 2, _INT_145 == 2]));
+#line 66 "D:/workspace-spyder/sample-cp-optimizer/bin-packing-variant-v1.py"
+_EXP_2 = [2, 2];
+_EXP_8 = [whereItem0, whereItem1];
+pack(["sizeBin0,d0", "sizeBin1,d0", "sizeBin2,d0"], _EXP_8, _EXP_2);
+_EXP_4 = [1, 1];
+pack(["sizeBin0,d1", "sizeBin1,d1", "sizeBin2,d1"], _EXP_8, _EXP_4);
+_EXP_5 = [3, 3];
+pack(["sizeBin0,d2", "sizeBin1,d2", "sizeBin2,d2"], _EXP_8, _EXP_5);
+_EXP_6 = [4, 4];
+pack(["sizeBin0,d3", "sizeBin1,d3", "sizeBin2,d3"], _EXP_8, _EXP_6);
+#line 72
+maximize(sum([whereItem0 == 0, whereItem1 == 0, whereItem0 == 1, whereItem1 == 1, whereItem0 == 2, whereItem1 == 2]));

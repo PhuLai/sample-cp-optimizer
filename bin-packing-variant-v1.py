@@ -54,34 +54,27 @@ wheres = []
 for item in items:
     bin_list = ()
     for bin in bins:
-        #print('item:'+str(item.id)+' - bin: '+str(bin.id)+': '+str(alloc_constraint[item.id, bin.id]))
         if(alloc_constraint[item.id, bin.id] == 1):
             bin_list += int(bin.id),
-    wheres.append(integer_var(domain=(bin_list)))
-
-#bin capacity constraint, 4-dimensions
-loads_d = []
-for k in range(4):
-    loads = []
-    for bin in bins:
-        loads.append(mdl.sum((wheres[int(item.id)] == int(bin.id)) * item.size[k] for item in items) <= bin.size[k])
-    loads_d.append(loads)
+    wheres.append(integer_var(domain=(bin_list), name = "whereItem"+str(item.id)))
      
 #===============SETUP CONSTRAINTS===============   
-
 #4 dimensional size -> 4 pack constraints
 for k in range(4):
-    mdl.add(mdl.pack(loads_d[k], wheres, items_data[:,k]))
+    sizes = items_data[:,k]
+    loads = [integer_var(0,bins[int(bin.id)].size[k], name="sizeBin"+str(bin.id)+",d"+str(k)) for bin in bins]
+    mdl.add(mdl.pack(loads, wheres, sizes))
     
 #===============SETUP OBJECTIVE=============== 
 print("...setting up objective")
 #maximize number of allocated items
-nb_allocated_items = mdl.sum((wheres[int(item.id)] == int(bin.id)) for bin in bins for item in items)
+nb_allocated_items = mdl.sum([(wheres[int(item.id)] == int(bin.id)) for bin in bins for item in items])
 mdl.add(maximize(nb_allocated_items))
+
 print("...solving...")
 #solve the problem and print the solution
 msol = mdl.solve(url = None, key = None, TimeLimit = None, SearchType = 'Auto')
 msol.print_solution()
 mdl.export_as_cpo(out='cpo.txt')
 with open('log.txt', "w") as text_file:
-    print(msol.get_solver_log(), file=text_file)
+    print(msol.get_solver_log(), file=text_file)    
