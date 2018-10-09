@@ -31,9 +31,11 @@ class Bin(object):
         self.size = size
         
 #===============IMPORT DATA===============
-items_data = np.loadtxt('set3-items.txt', dtype = np.integer, delimiter=',')
-bins_data = np.loadtxt('set3-bins.txt', dtype = np.integer, delimiter=',')
-alloc_constraint = np.loadtxt('set3-alloc-constraint.txt', dtype = np.integer, delimiter=',')
+items_data = np.loadtxt('set1-items.txt', dtype = np.integer, delimiter=',')
+bins_data = np.loadtxt('set1-bins.txt', dtype = np.integer, delimiter=',')
+alloc_constraint = np.loadtxt('set1-alloc-constraint.txt', dtype = np.integer, delimiter=',')
+
+nb_bins = len(bins_data)
         
 #===============INITIALIZE DATA===============   
 #items        
@@ -44,6 +46,9 @@ for i in range(0,len(items_data)):
 bins = []
 for i in range(len(bins_data)):
     bins.append(Bin(i, bins_data[i]))
+    
+#add a new bin at the end of the list, big enough to accommodate ALL items
+bins.append(Bin(nb_bins, sum(items_data)))
 
 #===============CREATE MODEL===============
 mdl = CpoModel(name = "bin-packing-variant")
@@ -53,26 +58,28 @@ mdl = CpoModel(name = "bin-packing-variant")
 wheres = []
 for item in items:
     bin_list = ()
-    for bin in bins:
+    for bin in bins[0:nb_bins]:
         if(alloc_constraint[item.id, bin.id] == 1):
             bin_list += int(bin.id),
+    #add the last bin (the big one)    
+    bin_list += nb_bins,
     wheres.append(integer_var(domain=(bin_list), name = "whereItem"+str(item.id)))
      
 #===============SETUP CONSTRAINTS===============   
-#4 dimensional size -> 4 pack constraints
+#one pack constraint for each dimension
 for k in range(4):
-    sizes = items_data[:,k]
+    #each bin's load can range(0..bin size)
     loads = [integer_var(0,bins[int(bin.id)].size[k], name="sizeBin"+str(bin.id)+",d"+str(k)) for bin in bins]
-    mdl.add(mdl.pack(loads, wheres, sizes))
+    mdl.add(mdl.pack(loads, wheres, items_data[:,k]))
     
 #===============SETUP OBJECTIVE=============== 
+#maximize number of items allocated to all bins EXCEPT the big bin
 print("...setting up objective")
-#maximize number of allocated items
-nb_allocated_items = mdl.sum([(wheres[int(item.id)] == int(bin.id)) for bin in bins for item in items])
+nb_allocated_items = mdl.sum([(wheres[int(item.id)] == int(bin.id)) for bin in bins[0:nb_bins] for item in items])
 mdl.add(maximize(nb_allocated_items))
 
-print("...solving...")
 #solve the problem and print the solution
+print("...solving...")
 msol = mdl.solve(url = None, key = None, TimeLimit = None, SearchType = 'Auto')
 msol.print_solution()
 mdl.export_as_cpo(out='cpo.txt')
