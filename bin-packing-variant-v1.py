@@ -31,9 +31,9 @@ class Bin(object):
         self.size = size
         
 #===============IMPORT DATA===============
-items_data = np.loadtxt('set1-items.txt', dtype = np.integer, delimiter=',')
-bins_data = np.loadtxt('set1-bins.txt', dtype = np.integer, delimiter=',')
-alloc_constraint = np.loadtxt('set1-alloc-constraint.txt', dtype = np.integer, delimiter=',')
+items_data = np.loadtxt('set2-items.txt', dtype = np.integer, delimiter=',')
+bins_data = np.loadtxt('set2-bins.txt', dtype = np.integer, delimiter=',')
+alloc_constraint = np.loadtxt('set2-alloc-constraint.txt', dtype = np.integer, delimiter=',')
 
 nb_bins = len(bins_data)
         
@@ -84,4 +84,4 @@ msol = mdl.solve(url = None, key = None, TimeLimit = None, SearchType = 'Auto')
 msol.print_solution()
 mdl.export_as_cpo(out='cpo.txt')
 with open('log.txt', "w") as text_file:
-    print(msol.get_solver_log(), file=text_file)    
+    print(msol.get_solver_log(), file=text_file)

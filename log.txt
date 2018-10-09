@@ -1,22 +1,718 @@
  ! ----------------------------------------------------------------------------
- ! Maximization problem - 14 variables, 4 constraints
- ! Initial process time : 0.00s (0.00s extraction + 0.00s propagation)
- !  . Log search space  : 0.0 (before), 0.0 (after)
- !  . Memory usage      : 301.9 kB (before), 301.9 kB (after)
+ ! Maximization problem - 528 variables, 4 constraints
+ ! TimeLimit            = 5
+ ! Initial process time : 0.01s (0.01s extraction + 0.00s propagation)
+ !  . Log search space  : 807.1 (before), 807.1 (after)
+ !  . Memory usage      : 2.0 MB (before), 2.0 MB (after)
  ! Using parallel search with 4 workers.
  ! ----------------------------------------------------------------------------
  !          Best Branches  Non-fixed    W       Branch decision
-                        0         14                 -
- + New bound is 2
- *             2        0  0.00s               (gap is 0%)
+                        0        528                 -
+ + New bound is 313
+                        0        426    1            -
+ + New bound is 312
+                        2        426    1   F   115  = whereItem60
+ + New bound is 311
+ *            62       64  0.13s        1      (gap is 401.6%)
+              62     1000          9    1       100 != whereItem41
+              62     1000          9    2   F    26 != whereItem51
+              62     1000         37    3        21  = whereItem6
+              62     1000          9    4       100 != whereItem61
+              62     2000        242    1        69  = whereItem2
+              62     2000        240    2         7  = whereItem59
+              62     2000         37    3       104  = whereItem11
+              62     2000        253    4         0  = whereItem22
+              62     3000        120    1        41  = whereItem1
+              62     3000        112    2        40 != whereItem33
+              62     3000         17    3         4  = whereItem40
+              62     3000        157    4        40 != whereItem33
+              62     4000         93    1        89  = whereItem50
+              62     4000         93    2       115 != whereItem16
+              62     4000         17    3   F    34  = whereItem43
+              62     4000        125    4   F    69  = whereItem38
+ ! Time = 0.31s, Average fail depth = 44, Memory usage = 14.7 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62     5000         42    1   F    17 != whereItem21
+              62     5000         75    2        77 != whereItem28
+              62     5000         29    3        92  = whereItem21
+              62     5000         82    4   F    17  = whereItem21
+              62     6000         42    1   F    68 != whereItem50
+              62     6000         71    2        68  = whereItem50
+              62     6000         17    3        72  = whereItem21
+              62     6000         72    4   F   115  = whereItem13
+              62     7000         41    1   F    69  = whereItem38
+              62     7000         38    2   F    60  = whereItem4
+              62     7000         17    3        27 != whereItem3
+              62     7000         50    4   F    91  = whereItem28
+              62     8000         25    1       105  = whereItem48
+              62     8000         25    2   F    73 != whereItem22
+              62     8000         17    3   F    78  = whereItem43
+              62     8000         29    4        31 != whereItem43
+              62     9000         25    1        68 != whereItem50
+              62     9000         25    2   F    90 != whereItem20
+              62     9000         17    3   F    27  = whereItem3
+              62     9000         29    4   F    74  = whereItem20
+ ! Time = 0.51s, Average fail depth = 55, Memory usage = 14.6 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62    10000         27    1       110 != whereItem26
+              62    10000         17    2   F   115  = whereItem51
+              62    10000         17    3   F    31  = whereItem43
+              62    10000         24    4       110  = whereItem26
+              62    11000         17    1        56  = whereItem37
+              62    11000         58    2   F    99  = whereItem39
+              62    11000         17    3        59 != whereItem3
+              62    12000         17    1   F   115  = whereItem8
+              62    12000         17    3        50 != whereItem43
+              62    11000         17    4   F   111 != whereItem16
+              62    13000         42    1   F    26  = whereItem17
+              62    12000         17    2        43  = whereItem5
+              62    13000         37    3         5  = whereItem9
+              62    12000         17    4   F    64 != whereItem8
+              62    13000         17    2   F    90  = whereItem41
+              62    14000         17    3        77  = whereItem48
+              62    13000         34    4        59 != whereItem40
+              62    14000         31    1        79 != whereItem27
+              62    14000         14    2       115  = whereItem4
+              62    15000         17    3        45 != whereItem3
+ ! Time = 0.71s, Average fail depth = 52, Memory usage = 14.7 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62    14000         40    4   F    85  = whereItem21
+              62    15000         34    1   F    90  = whereItem20
+              62    15000         17    2   F    38  = whereItem6
+              62    16000         17    3        60 != whereItem43
+              62    15000         17    4        68  = whereItem53
+              62    16000         25    1   F   107  = whereItem62
+              62    16000         17    2        20 != whereItem40
+              62    17000         17    3            -
+              62    16000         17    4       115  = whereItem37
+              62    17000         23    1   F    65  = whereItem27
+              62    17000         17    2   F    65 != whereItem7
+              62    17000         17    4   F     6 != whereItem6
+              62    18000         21    1   F    26  = whereItem17
+              62    18000         17    2        84  = whereItem30
+              62    18000         17    3        59 != whereItem3
+              62    18000         17    4        79 != whereItem33
+              62    19000         17    1        24  = whereItem61
+              62    19000         17    2   F    30  = whereItem5
+              62    19000         17    3        30  = whereItem34
+              62    19000         24    4   F   114  = whereItem11
+ ! Time = 0.88s, Average fail depth = 50, Memory usage = 14.9 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62    20000         25    1       115 != whereItem8
+              62    20000         17    2       115 != whereItem53
+              62    20000         17    3   F    17  = whereItem3
+              62    20000         28    4   F   105  = whereItem48
+              62    21000         21    1        77 != whereItem31
+              62    21000         17    2        62 != whereItem49
+              62    21000         17    3   F    59  = whereItem3
+              62    21000         17    4        77 != whereItem33
+              62    22000         21    1   F    58 != whereItem38
+              62    22000         17    2       115  = whereItem60
+              62    22000         17    3        39 != whereItem43
+              62    22000         17    4   F     2 != whereItem28
+              62    23000         17    1   F    30  = whereItem39
+              62    23000         22    2        58 != whereItem56
+              62    23000         25    3        90  = whereItem41
+              62    23000         17    4   F    92  = whereItem40
+              62    24000         25    1        89 != whereItem50
+              62    24000         17    2        68  = whereItem50
+              62    24000         21    3   F    60  = whereItem43
+              62    24000         17    4   F    21  = whereItem49
+ ! Time = 1.01s, Average fail depth = 50, Memory usage = 14.6 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62    25000         25    1       114  = whereItem11
+              62    25000         17    2   F    79  = whereItem28
+              62    25000         21    3        50 != whereItem43
+              62    25000         17    4        55  = whereItem57
+              62    26000         21    1        72  = whereItem3
+              62    26000         21    2   F   100 != whereItem19
+              62    26000         17    3        34 != whereItem43
+              62    26000         22    4        21  = whereItem49
+              62    27000         17    1   F    73  = whereItem48
+              62    27000         17    2   F    86 != whereItem8
+              62    27000         17    3        31 != whereItem43
+              62    27000         17    4   F    27 != whereItem40
+              62    28000         17    1   F    26  = whereItem17
+              62    28000         17    2       107 != whereItem8
+              62    28000         17    3        60 != whereItem43
+              62    28000         31    4       115 != whereItem9
+              62    29000         21    1   F     5 != whereItem9
+              62    29000         17    2        70 != whereItem50
+              62    29000         21    3        56 != whereItem43
+              62    29000         13    4        89 != whereItem50
+ ! Time = 1.21s, Average fail depth = 49, Memory usage = 14.6 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62    30000         21    1   F    58  = whereItem56
+              62    30000         17    2   F    38  = whereItem28
+              62    30000         21    3        76 != whereItem43
+              62    30000         27    4        68  = whereItem53
+              62    31000         17    1   F   115  = whereItem60
+              62    31000         17    2   F   110  = whereItem43
+              62    31000         17    3        34 != whereItem43
+              62    31000         32    4   F    93  = whereItem19
+              62    32000         21    1   F   115  = whereItem62
+              62    32000         17    2   F    45  = whereItem40
+              62    32000         17    3   F    76  = whereItem43
+              62    32000         17    4       115 != whereItem53
+              62    33000         17    1   F    65  = whereItem49
+              62    33000         17    2        86 != whereItem48
+              62    33000         17    3            -
+              62    33000         38    4        71 != whereItem62
+              62    34000         17    1   F    35  = whereItem40
+              62    34000         17    2       111  = whereItem6
+              62    34000         17    3        27 != whereItem3
+              62    34000         33    4        93 != whereItem19
+ ! Time = 1.39s, Average fail depth = 49, Memory usage = 14.7 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62    35000         17    1        62 != whereItem27
+              62    35000         17    2   F    38  = whereItem28
+              62    35000         17    3   F    76  = whereItem43
+              62    35000         17    4        29  = whereItem14
+              62    36000         17    1       115 != whereItem18
+              62    36000         17    2   F    18  = whereItem30
+              62    36000         17    3   F    59  = whereItem21
+              62    36000         21    4   F   115  = whereItem4
+              62    37000         17    1        35 != whereItem40
+              62    37000         22    2        78 != whereItem43
+              62    37000         21    3   F    78  = whereItem43
+              62    37000         17    4   F   115  = whereItem41
+              62    38000         17    1   F    38  = whereItem16
+              62    38000         17    2   F   115  = whereItem2
+              62    38000         17    3        45  = whereItem3
+              62    38000         27    4   F    90 != whereItem41
+              62    39000         25    1   F   114  = whereItem39
+              62    39000         42    2        86  = whereItem48
+              62    39000         17    3        78 != whereItem43
+              62    39000         17    4   F   115  = whereItem44
+ ! Time = 1.55s, Average fail depth = 48, Memory usage = 14.8 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62    40000         30    1   F   114  = whereItem39
+              62    40000         17    2        84 != whereItem26
+              62    40000         17    3        50 != whereItem43
+              62    40000         31    4   F    79  = whereItem33
+              62    41000         17    1       102 != whereItem61
+              62    41000         21    2        68  = whereItem13
+              62    41000         21    3   F    78 != whereItem43
+              62    41000         17    4        77  = whereItem28
+              62    42000         21    1        64  = whereItem33
+              62    42000         17    2       115 != whereItem49
+              62    42000         17    3        76 != whereItem43
+              62    42000         17    4   F   107 != whereItem33
+              62    43000         17    1        71 != whereItem48
+              62    43000         17    2   F    62  = whereItem27
+              62    43000         17    3   F    34  = whereItem43
+              62    43000         28    4         6  = whereItem45
+              62    44000         18    1   F    93  = whereItem19
+              62    44000         17    2   F    21  = whereItem16
+              62    44000         17    3        76 != whereItem43
+              62    44000         21    4       115 != whereItem50
+ ! Time = 1.70s, Average fail depth = 48, Memory usage = 14.9 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62    45000         17    1        48  = whereItem14
+              62    45000         17    2   F    30  = whereItem14
+              62    45000         17    3        76 != whereItem43
+              62    45000         17    4   F    69  = whereItem0
+              62    46000         17    1        30 != whereItem39
+              62    46000         21    2        43  = whereItem5
+              62    46000         17    3   F    78 != whereItem43
+              62    46000         17    4   F    89  = whereItem50
+              62    47000         14    1        71  = whereItem33
+              62    47000         17    2   F    63  = whereItem7
+              62    47000         17    3   F    39  = whereItem43
+              62    47000         17    4        24  = whereItem19
+              62    48000         17    1        86  = whereItem31
+              62    48000         17    2   F    60  = whereItem42
+              62    48000         17    3   F    34  = whereItem43
+              62    48000         21    4   F   115  = whereItem51
+              62    49000         17    1        93  = whereItem61
+              62    49000         21    2       112 != whereItem43
+              62    49000         17    3   F    56  = whereItem43
+              62    49000         27    4       115  = whereItem32
+ ! Time = 1.87s, Average fail depth = 48, Memory usage = 14.6 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62    50000         33    1        18 != whereItem30
+              62    50000         21    2       114 != whereItem14
+              62    50000         17    3   F    52  = whereItem43
+              62    50000         33    4        84  = whereItem26
+              62    51000         17    1        99  = whereItem39
+              62    51000         22    2   F    93  = whereItem19
+              62    51000         17    3        27 != whereItem3
+              62    51000         17    4   F    93 != whereItem19
+              62    52000         26    2   F    88  = whereItem27
+              62    52000         17    3   F    56  = whereItem43
+              62    52000         21    4   F    12 != whereItem32
+              62    52000         14    1   F    56  = whereItem37
+              62    53000         17    2       114  = whereItem11
+              62    53000         25    3   F    76  = whereItem43
+              62    53000         21    4        27 != whereItem3
+              62    53000         28    1   F    73  = whereItem48
+              62    54000         17    2       115  = whereItem31
+              62    54000         17    3   F    78  = whereItem43
+              62    54000         21    4   F    79  = whereItem22
+              62    54000         17    1   F    72  = whereItem3
+ ! Time = 2.07s, Average fail depth = 48, Memory usage = 14.6 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62    55000         46    2   F   115  = whereItem11
+              62    55000         17    3        64 != whereItem22
+              62    55000         21    4   F    88  = whereItem7
+              62    55000         17    1        71 != whereItem27
+              62    56000         17    2       100 != whereItem31
+              62    56000         17    3   F    80  = whereItem43
+              62    56000         24    4   F    53  = whereItem45
+              62    56000         17    1        81 != whereItem3
+              62    57000         17    2        22  = whereItem63
+              62    57000         17    3   F    60  = whereItem43
+              62    57000         21    4        80 != whereItem37
+              62    57000         22    1   F    86  = whereItem31
+              62    58000         17    2   F    45  = whereItem40
+              62    58000         17    3        99  = whereItem24
+              62    58000         14    4        45 != whereItem3
+              62    58000         30    1        64 != whereItem22
+              62    59000         17    2       115  = whereItem63
+              62    59000         17    3        34 != whereItem43
+              62    59000         17    4        68  = whereItem32
+              62    59000         17    1   F    93 != whereItem19
+ ! Time = 2.27s, Average fail depth = 48, Memory usage = 14.7 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62    60000         17    2        88  = whereItem27
+              62    60000         17    3        39  = whereItem26
+              62    60000         26    4        99 != whereItem39
+              62    60000         17    1        28  = whereItem25
+              62    61000         21    2       115  = whereItem47
+              62    61000         17    3   F    80  = whereItem43
+              62    61000         17    1       115 != whereItem6
+              62    62000         17    2         6  = whereItem45
+              62    62000         17    3   F    76  = whereItem43
+              62    61000         21    4        78 != whereItem53
+              62    62000         17    1   F    88  = whereItem27
+              62    63000         17    2        59 != whereItem21
+              62    63000         17    3   F    17  = whereItem3
+              62    62000         17    4   F    12  = whereItem58
+              62    63000         17    1   F    93  = whereItem19
+              62    64000         29    2   F    77 != whereItem62
+              62    64000         78    3        27 != whereItem3
+              62    63000         21    4   F     4  = whereItem40
+              62    64000         17    1   F   115  = whereItem40
+              62    65000         21    3   F    56  = whereItem43
+ ! Time = 2.44s, Average fail depth = 48, Memory usage = 14.8 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62    64000         17    4   F    81  = whereItem62
+              62    65000         17    1   F    79  = whereItem27
+              62    65000         17    2        71  = whereItem33
+              62    66000         17    3   F    78  = whereItem43
+              62    65000         17    4       115 != whereItem18
+              62    66000         17    1         0 != whereItem22
+              62    66000         21    2        95  = whereItem60
+              62    67000         17    3   F    76  = whereItem43
+              62    66000         31    4   F   101 != whereItem30
+              62    67000         17    1       115  = whereItem59
+              62    67000         17    2   F    30  = whereItem11
+              62    68000         17    3   F    52  = whereItem43
+              62    67000         17    4        60  = whereItem37
+              62    68000         17    1        79 != whereItem22
+              62    68000         43    2   F    73 != whereItem8
+              62    69000         17    3        27 != whereItem3
+              62    68000         17    4       115 != whereItem3
+              62    69000         17    1        82  = whereItem55
+              62    69000         42    2        71 != whereItem28
+              62    70000         17    3        52 != whereItem43
+ ! Time = 2.58s, Average fail depth = 48, Memory usage = 14.8 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62    69000         27    4        30 != whereItem5
+              62    70000         17    1       115 != whereItem34
+              62    70000         17    2        35 != whereItem40
+              62    71000         17    3   F    31  = whereItem43
+              62    70000         17    4        42  = whereItem1
+              62    71000         47    1        73  = whereItem48
+              62    71000         17    2        77  = whereItem62
+              62    72000         17    3        27 != whereItem21
+              62    71000         21    4   F    93  = whereItem19
+              62    72000         27    1        58 != whereItem38
+              62    72000         17    2   F    50  = whereItem36
+              62    73000         17    3   F    56  = whereItem43
+              62    72000         28    4   F   115  = whereItem50
+              62    73000         26    1   F    93  = whereItem19
+              62    73000         17    2        99 != whereItem14
+              62    74000         17    3   F    80  = whereItem43
+              62    73000         21    4   F   115  = whereItem54
+              62    74000         22    1   F    30  = whereItem34
+              62    74000         32    2       115  = whereItem48
+              62    75000         17    3   F        -
+ ! Time = 2.73s, Average fail depth = 48, Memory usage = 14.9 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62    74000         17    4   F   115  = whereItem54
+              62    75000         17    1        86 != whereItem31
+              62    75000         27    2       100 != whereItem19
+              62    76000         17    3   F    17  = whereItem3
+              62    75000         17    4        89  = whereItem50
+              62    76000         17    1        71 != whereItem28
+              62    76000         23    2        23  = whereItem29
+              62    77000         21    3        56 != whereItem43
+              62    76000         18    4   F    70  = whereItem50
+              62    77000         17    1       115 != whereItem24
+              62    77000         23    2        56 != whereItem43
+              62    78000         21    3        34 != whereItem43
+              62    77000         17    4       100  = whereItem61
+              62    78000         14    1        59  = whereItem21
+              62    78000         17    2   F    74  = whereItem20
+              62    79000         17    3        59 != whereItem21
+              62    78000         17    4   F    86  = whereItem48
+              62    79000         22    1        99  = whereItem34
+              62    79000         17    2        99 != whereItem0
+              62    80000         17    3   F    80 != whereItem43
+ ! Time = 2.90s, Average fail depth = 47, Memory usage = 14.5 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62    79000         17    4        60 != whereItem51
+              62    80000         18    1       115  = whereItem62
+              62    80000         25    2   F    43 != whereItem55
+              62    81000         17    3   F        -
+              62    80000         21    4   F    77 != whereItem22
+              62    81000         17    1       115 != whereItem38
+              62    81000         17    2   F    79  = whereItem33
+              62    82000         17    3        55  = whereItem57
+              62    81000         21    4        27 != whereItem40
+              62    82000         17    1   F    38  = whereItem49
+              62    82000         17    2   F   107 != whereItem22
+              62    83000         17    3   F    60  = whereItem43
+              62    82000         37    4   F    56  = whereItem37
+              62    83000         21    1   F    78  = whereItem43
+              62    83000         17    2   F   115  = whereItem50
+              62    84000         21    3        17  = whereItem3
+              62    83000         24    4        56 != whereItem63
+              62    84000         17    1        62  = whereItem49
+              62    84000         17    2       110 != whereItem43
+              62    85000         21    3        52 != whereItem43
+ ! Time = 3.05s, Average fail depth = 47, Memory usage = 14.6 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62    84000         21    4   F    73  = whereItem8
+              62    85000         17    1        79  = whereItem49
+              62    85000         21    2       115  = whereItem51
+              62    86000         17    3        18  = whereItem12
+              62    85000         18    4   F   104  = whereItem3
+              62    86000         17    1       115 != whereItem62
+              62    86000         17    2        69  = whereItem15
+              62    87000         17    3   F    31  = whereItem43
+              62    86000         18    4   F    74  = whereItem41
+              62    87000         22    1   F    71  = whereItem48
+              62    87000         24    2        24  = whereItem19
+              62    88000         17    3        17 != whereItem3
+              62    87000         17    4       115  = whereItem12
+              62    88000         17    1        18  = whereItem35
+              62    88000         17    2         0 != whereItem8
+              62    89000         17    3   F    76  = whereItem43
+              62    88000         17    4       115 != whereItem17
+              62    89000         22    1        93  = whereItem61
+              62    89000         17    2   F    79  = whereItem62
+              62    90000         17    3   F    56  = whereItem43
+ ! Time = 3.18s, Average fail depth = 47, Memory usage = 14.7 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62    89000         37    4   F   115  = whereItem63
+              62    90000         22    1        90  = whereItem20
+              62    90000         14    2   F    16 != whereItem9
+              62    91000         17    3        34 != whereItem43
+              62    90000         23    4        89 != whereItem50
+              62    91000         17    1         0 != whereItem22
+              62    91000         22    2       115  = whereItem19
+              62    92000         17    3        79 != whereItem33
+              62    91000         17    4        64 != whereItem48
+              62    92000         17    1   F    22  = whereItem63
+              62    92000         18    2   F    30  = whereItem11
+              62    93000         17    3         0  = whereItem8
+              62    92000         18    4       115 != whereItem63
+              62    93000         17    1   F    69  = whereItem15
+              62    93000         27    2        74 != whereItem20
+              62    94000         17    3   F        -
+              62    94000         17    1        38 != whereItem49
+              62    94000         21    2        90 != whereItem41
+              62    95000         17    3   F    39  = whereItem43
+              62    93000         17    4   F     1  = whereItem16
+ ! Time = 3.34s, Average fail depth = 47, Memory usage = 14.8 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62    95000         17    1   F    72  = whereItem3
+              62    95000         17    2        60 != whereItem51
+              62    96000         41    3   F    31  = whereItem43
+              62    94000         21    4   F    99  = whereItem24
+              62    96000         17    1         9  = whereItem30
+              62    96000         17    2   F    81  = whereItem33
+              62    97000         41    3         7  = whereItem59
+              62    95000         17    4   F   115  = whereItem2
+              62    97000         17    1   F    82  = whereItem55
+              62    96000         22    4   F    40  = whereItem33
+              62    98000         17    1   F    81  = whereItem21
+              62    97000         17    2   F   107  = whereItem22
+              62    98000         17    3   F     4  = whereItem3
+              62    97000         28    4        79 != whereItem22
+              62    99000         17    1        17 != whereItem3
+              62    98000         17    2        62 != whereItem27
+              62    99000         17    3   F        -
+              62    98000         17    4       115  = whereItem3
+              62     100k         23    1        99 != whereItem24
+              62    99000         17    2   F   112  = whereItem29
+ ! Time = 3.51s, Average fail depth = 47, Memory usage = 14.8 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62     100k         25    3        62 != whereItem27
+              62    99000         17    4        60 != whereItem43
+              62     101k         17    1   F    88  = whereItem27
+              62     100k         21    2        71 != whereItem33
+              62     101k         25    3        38 != whereItem22
+              62     100k         17    4        65 != whereItem27
+              62     101k         21    2       115  = whereItem35
+              62     102k         21    3        35 != whereItem3
+              62     101k         17    4        68  = whereItem50
+              62     102k         17    1       115  = whereItem35
+              62     102k         17    2   F    53 != whereItem45
+              62     103k         17    3        27 != whereItem3
+              62     102k         17    4        95  = whereItem57
+              62     103k         23    1       115 != whereItem33
+              62     103k         17    2       115  = whereItem16
+              62     104k         17    3        59 != whereItem3
+              62     103k         17    4       111  = whereItem6
+              62     104k         22    1   F    59  = whereItem21
+              62     104k         17    2        43 != whereItem5
+              62     105k         17    3        73  = whereItem48
+ ! Time = 3.66s, Average fail depth = 47, Memory usage = 14.9 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62     104k         18    4   F    95  = whereItem42
+              62     105k         22    1        18  = whereItem35
+              62     105k         22    2        69  = whereItem15
+              62     106k         17    3   F    34  = whereItem43
+              62     105k         19    4   F    18 != whereItem30
+              62     106k         17    1        58 != whereItem38
+              62     106k         21    2       115 != whereItem32
+              62     107k         17    3   F    76  = whereItem43
+              62     106k         17    4        21  = whereItem27
+              62     107k         17    1   F   104  = whereItem5
+              62     107k         22    2   F    94  = whereItem36
+              62     108k         17    3         4 != whereItem3
+              62     107k         17    4        59 != whereItem3
+              62     108k         17    1   F    50  = whereItem36
+              62     108k         22    2       115  = whereItem34
+              62     109k         21    3        45 != whereItem3
+              62     108k         17    4        64 != whereItem62
+              62     109k         28    1   F   115  = whereItem34
+              62     109k         21    2        45 != whereItem3
+              62     110k         17    3   F    52  = whereItem43
+ ! Time = 3.83s, Average fail depth = 47, Memory usage = 14.5 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62     109k         17    4       114 != whereItem34
+              62     110k         26    1   F   115  = whereItem45
+              62     110k         17    2        93 != whereItem19
+              62     111k         17    3   F    56  = whereItem43
+              62     110k         21    4        59 != whereItem40
+              62     111k         17    1   F    90 != whereItem41
+              62     111k         17    2   F    48  = whereItem0
+              62     112k         17    3   F    80  = whereItem43
+              62     111k         22    4        88  = whereItem7
+              62     112k         17    1        65 != whereItem27
+              62     112k         14    2        93 != whereItem61
+              62     113k         17    3   F    31  = whereItem43
+              62     112k         17    4   F    91 != whereItem48
+              62     113k         17    1   F    21 != whereItem16
+              62     113k         14    2   F    99 != whereItem34
+              62     114k         17    3            -
+              62     113k         17    4        99 != whereItem0
+              62     114k         17    1        34  = whereItem43
+              62     114k         21    2        82 != whereItem55
+              62     115k         17    3        45 != whereItem3
+ ! Time = 3.96s, Average fail depth = 47, Memory usage = 14.6 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62     114k         17    4        35 != whereItem3
+              62     115k         46    1       115 != whereItem45
+              62     115k         17    2        56 != whereItem63
+              62     116k         17    3        52 != whereItem43
+              62     115k         17    4   F    38  = whereItem28
+              62     116k         37    1       115  = whereItem30
+              62     116k         17    2   F    77 != whereItem33
+              62     117k         17    3   F    56  = whereItem43
+              62     116k         17    4   F    88 != whereItem49
+              62     117k         17    1        17 != whereItem21
+              62     117k         37    2       115 != whereItem39
+              62     118k         17    3   F    78  = whereItem43
+              62     117k         17    4   F   115  = whereItem14
+              62     118k         17    1       114 != whereItem14
+              62     118k         17    2   F    91  = whereItem48
+              62     119k         21    3   F    50  = whereItem43
+              62     118k         23    4   F   112  = whereItem29
+              62     119k         22    1   F    60  = whereItem17
+              62     119k         17    2        18 != whereItem30
+              62     120k         17    3        34 != whereItem43
+ ! Time = 4.13s, Average fail depth = 47, Memory usage = 14.7 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62     119k         17    4   F    79 != whereItem27
+              62     120k         17    1   F    59  = whereItem40
+              62     120k         17    2   F    68 != whereItem32
+              62     121k         17    3        59 != whereItem3
+              62     120k         17    4   F    81 != whereItem33
+              62     121k         17    1        30  = whereItem34
+              62     121k         21    2        65 != whereItem49
+              62     122k         17    3   F    78  = whereItem43
+              62     121k         17    4        77 != whereItem28
+              62     122k         13    1       115  = whereItem32
+              62     122k         17    2        92 != whereItem40
+              62     123k         17    3   F    52  = whereItem43
+              62     122k         19    4        28  = whereItem18
+              62     123k         13    1        60  = whereItem46
+              62     123k         27    2        53  = whereItem45
+              62     124k         17    3        52 != whereItem43
+              62     123k         17    4        60 != whereItem4
+              62     124k         22    1        71 != whereItem48
+              62     124k         17    2   F    40  = whereItem28
+              62     125k         17    3        34 != whereItem43
+ ! Time = 4.26s, Average fail depth = 47, Memory usage = 14.8 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62     124k         24    4       115  = whereItem46
+              62     125k         17    1   F    86  = whereItem8
+              62     125k         46    2        99  = whereItem34
+              62     126k         17    3        60 != whereItem43
+              62     125k         23    4        31  = whereItem42
+              62     126k         17    1   F    71  = whereItem62
+              62     126k         17    2   F   115  = whereItem25
+              62     127k         17    3   F    39  = whereItem43
+              62     126k         17    4   F    73 != whereItem31
+              62     127k         17    1        80 != whereItem37
+              62     127k         21    2   F    81  = whereItem62
+              62     128k         29    3   F    39  = whereItem43
+              62     127k         17    4        79 != whereItem62
+              62     128k         25    1        42  = whereItem54
+              62     128k         21    2   F    38  = whereItem28
+              62     129k         29    3   F    31  = whereItem43
+              62     128k         17    4        27  = whereItem21
+              62     129k         17    1        27 != whereItem3
+              62     129k         19    2       100 != whereItem19
+              62     129k         14    4   F    64  = whereItem31
+ ! Time = 4.41s, Average fail depth = 47, Memory usage = 14.9 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62     130k         17    1        27  = whereItem40
+              62     130k         21    2   F    64  = whereItem62
+              62     130k         17    3       115  = whereItem3
+              62     130k         21    4   F    86  = whereItem31
+              62     131k         17    1   F    85 != whereItem21
+              62     131k         17    2   F     2  = whereItem28
+              62     131k         17    3        27 != whereItem3
+              62     131k         21    4   F    33 != whereItem6
+              62     132k         80    1   F    35 != whereItem21
+              62     132k         21    2        81 != whereItem21
+              62     132k         17    3        17 != whereItem3
+              62     132k         93    4         6 != whereItem6
+              62     133k         80    1   F    69  = whereItem39
+              62     133k         96    2   F    27 != whereItem21
+              62     133k         17    3        59 != whereItem3
+              62     133k         93    4        68 != whereItem50
+              62     134k        113    1   F    60  = whereItem17
+              62     134k         96    2   F    94  = whereItem36
+              62     134k         17    3   F    27  = whereItem3
+              62     134k        108    4   F    89  = whereItem36
+ ! Time = 4.55s, Average fail depth = 48, Memory usage = 14.9 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62     135k         58    1        16  = whereItem9
+              62     135k        118    2   F   114  = whereItem14
+              62     135k         17    3   F    76 != whereItem43
+              62     135k         43    4   F   115  = whereItem35
+              62     136k         42    1       115 != whereItem26
+              62     136k         40    2   F    29 != whereItem47
+              62     136k         25    3        72  = whereItem3
+              62     136k         38    4   F     7  = whereItem58
+              62     137k         25    1        73 != whereItem22
+              62     137k         39    2   F   115  = whereItem55
+              62     137k         17    3   F    56  = whereItem43
+              62     137k         21    4   F    27  = whereItem40
+              62     138k         17    1   F    38  = whereItem22
+              62     138k         21    2        45 != whereItem3
+              62     138k         21    3   F    56  = whereItem43
+              62     138k         21    4   F    45  = whereItem40
+              62     139k         17    1        86 != whereItem31
+              62     139k         21    2        77 != whereItem31
+              62     139k         21    3        36  = whereItem32
+              62     139k         21    4   F    20  = whereItem40
+ ! Time = 4.69s, Average fail depth = 48, Memory usage = 15.0 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62     140k         17    1   F    81  = whereItem3
+              62     140k         21    2        45 != whereItem40
+              62     140k         17    3   F    56  = whereItem43
+              62     140k         21    4   F   104  = whereItem3
+              62     141k         71    1   F    45  = whereItem3
+              62     141k         79    2        40 != whereItem21
+              62     141k         17    3         9  = whereItem30
+              62     141k         86    4   F    27  = whereItem21
+              62     142k         71    1   F    35  = whereItem3
+              62     142k         96    2   F    35  = whereItem21
+              62     142k         17    3   F    52  = whereItem43
+              62     142k         86    4        94  = whereItem50
+              62     143k        112    1       115 != whereItem38
+              62     143k         96    2        99  = whereItem39
+              62     143k         17    3   F    31  = whereItem43
+              62     143k        112    4        58  = whereItem38
+              62     144k        112    1        59  = whereItem21
+              62     144k        117    2   F    41  = whereItem54
+              62     144k         17    3        45 != whereItem3
+              62     144k         44    4   F    53  = whereItem45
+ ! Time = 4.82s, Average fail depth = 49, Memory usage = 14.7 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62     145k         38    1   F     9  = whereItem44
+              62     145k         39    2         6  = whereItem45
+              62     145k         17    3        79  = whereItem48
+              62     145k         38    4         7 != whereItem58
+              62     146k         48    1   F    53 != whereItem45
+              62     146k         39    2   F    53 != whereItem45
+              62     146k         17    3   F    52  = whereItem43
+              62     146k         38    4   F    29  = whereItem59
+              62     147k         13    1   F     1  = whereItem16
+              62     147k         21    2   F    71  = whereItem49
+              62     147k         17    3        60 != whereItem43
+              62     147k         21    4   F    71 != whereItem28
+              62     148k         13    1   F    79 != whereItem49
+              62     148k         21    2   F    64  = whereItem8
+              62     148k         25    3            -
+              62     148k         21    4        38 != whereItem27
+              62     149k         13    1       115  = whereItem6
+              62     149k         21    2   F    79 != whereItem22
+              62     149k         41    3   F    34  = whereItem43
+              62     149k         21    4   F    43 != whereItem5
+ ! Time = 4.95s, Average fail depth = 49, Memory usage = 14.7 MB
+ ! Current bound is 311 (gap is 401.6%)
+ !          Best Branches  Non-fixed    W       Branch decision
+              62     150k         17    1   F   115  = whereItem63
+              62     150k         21    2   F    29  = whereItem18
+              62     150k         21    3   F    52  = whereItem43
+              62     150k         57    4   F   110 != whereItem26
+              62     151k         76    1        22 != whereItem63
  ! ----------------------------------------------------------------------------
- ! Search completed, 1 solution found.
- ! Best objective         : 2 (optimal - effective tol. is 0)
- ! Best bound             : 2
- ! Number of branches     : 0
- ! Number of fails        : 0
- ! Total memory usage     : 803.3 kB (760.6 kB CP Optimizer + 42.7 kB Concert)
- ! Time spent in solve    : 0.02s (0.01s engine + 0.00s extraction)
- ! Search speed (br. / s) : 0
+ ! Search terminated by limit, 1 solution found.
+ ! Best objective         : 62 (gap is 401.6%)
+ ! Best bound             : 311
+ ! Number of branches     : 601000
+ ! Number of fails        : 269221
+ ! Total memory usage     : 14.8 MB (14.7 MB CP Optimizer + 0.1 MB Concert)
+ ! Time spent in solve    : 5.01s (4.99s engine + 0.01s extraction)
+ ! Search speed (br. / s) : 120392.6
  ! ----------------------------------------------------------------------------
 
