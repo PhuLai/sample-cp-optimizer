@@ -1,6 +1,6 @@
 # sample-cp-optimizer
 
-This example solves a variant of the bin packing problem using IBM CP Optimizer
+This example (bin-packing-variant.py) solves a variant of the bin packing problem using IBM CP Optimizer.
 
 Given:
 
@@ -19,4 +19,4 @@ Objective:
     
     - Maximize x_1 * x_2 + ... * x_n
     
-    where x is the number of items allocated to bin i for all i in [1..n]
+   where x is the number of items allocated to bin i for all i in [1..n]
