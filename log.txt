@@ -1,29 +1,25 @@
  ! ----------------------------------------------------------------------------
- ! Maximization problem - 24 variables, 4 constraints
- ! Initial process time : 0.00s (0.00s extraction + 0.00s propagation)
- !  . Log search space  : 52.3 (before), 52.3 (after)
- !  . Memory usage      : 334.9 kB (before), 334.9 kB (after)
+ ! Maximization problem - 1016 variables, 4 constraints
+ ! Initial process time : 0.18s (0.18s extraction + 0.00s propagation)
+ !  . Log search space  : 3530.5 (before), 3530.5 (after)
+ !  . Memory usage      : 31.8 MB (before), 31.8 MB (after)
  ! Using parallel search with 4 workers.
  ! ----------------------------------------------------------------------------
  !          Best Branches  Non-fixed    W       Branch decision
-                        0         24                 -
- + New bound is 8; 90
-                        0         24    1   F        -
- + New bound is 8; 1
-                        0         24    1   F        -
- + New bound is 8; 0
- *             7        7  0.01s        1      (gap is 14.29% @ crit. 1 of 2)
-   New objective is 7; 12
-               7      216          6    1   F     3  = whereItem5
- + New bound is 7; 12 (gap = 0.00000%)
+                        0       1016                 -
+ + New bound is 512; +Infinity
+ *           512      513  1.00s        1      (gap  > 10000% @ crit. 2 of 2)
+   New objective is 512; 179769000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+             512     1000         57    1       103  = whereItem441
+             512     1000         57    2        19  = whereItem373
  ! ----------------------------------------------------------------------------
  ! Search completed, 1 solution found.
- ! Best objective         : 7; 12 (optimal)
- ! Best bound             : 7; 12
- ! Number of branches     : 216
- ! Number of fails        : 102
- ! Total memory usage     : 962.7 kB (917.4 kB CP Optimizer + 45.3 kB Concert)
- ! Time spent in solve    : 0.01s (0.01s engine + 0.00s extraction)
- ! Search speed (br. / s) : 15428.6
+ ! Best objective         : 512; 179769000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 (optimal)
+ ! Best bound             : 512; +Infinity
+ ! Number of branches     : 2532
+ ! Number of fails        : 18
+ ! Total memory usage     : 165.8 MB (165.6 MB CP Optimizer + 0.2 MB Concert)
+ ! Time spent in solve    : 1.01s (0.83s engine + 0.18s extraction)
+ ! Search speed (br. / s) : 3050.6
  ! ----------------------------------------------------------------------------
 
