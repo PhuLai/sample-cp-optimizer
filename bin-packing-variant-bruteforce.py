@@ -13,8 +13,11 @@ Objective:
     
 """
 import numpy as np
+from operator import mul
+from functools import reduce
 import itertools
 from collections import Counter
+import math
     
 class Item(object):
     def __init__(self, id, size):
@@ -27,9 +30,9 @@ class Bin(object):
         self.size = size
         
 #===============IMPORT DATA===============
-items_data = np.loadtxt('set8-items.txt', dtype = np.integer, delimiter=',')
-bins_data = np.loadtxt('set8-bins.txt', dtype = np.integer, delimiter=',')
-alloc_constraint = np.loadtxt('set8-alloc-constraint.txt', dtype = np.integer, delimiter=',')
+items_data = np.loadtxt('set32-items.txt', dtype = np.integer, delimiter=',')
+bins_data = np.loadtxt('set32-bins.txt', dtype = np.integer, delimiter=',')
+alloc_constraint = np.loadtxt('set32-alloc-constraint.txt', dtype = np.integer, delimiter=',')
 
 nb_bins = len(bins_data)
 nb_items = len(items_data)
@@ -59,6 +62,7 @@ for item in items:
     bin_list += nb_bins,
     wheres.append(bin_list)
 
+print("Finding all possible combinations of bin assignment...")
 #find all possible combinations of bin assignment
 possible_solutions_proximity = list(itertools.product(*wheres))
 possible_solutions_capacity = []
@@ -73,6 +77,22 @@ for sol in possible_solutions_proximity:
     if(is_resource_constraint_valid):
         possible_solutions_capacity.append(sol)
 
-#find the solution with maximum number of items allocated
+print("Get the nb of allocated items for all possible solutions...")
+#get the nb of allocated items for all possible solutions
 nb_users_allocated = [len([s for s in sol if s is not nb_bins]) for sol in possible_solutions_capacity]
+#get the solution idx with the maximum number of allocated items
 max_user_sol_idx = [index for index, value in enumerate(nb_users_allocated) if value == max(nb_users_allocated)]
+#products x1*x2*...*xn of those solutions
+products = []
+for sol_idx in max_user_sol_idx:
+    #get the number of occurence of each bin
+    counter = Counter(possible_solutions_capacity[sol_idx])
+    #calculate the product, exclude the big bins
+    products.append(reduce(mul, [counter[c] for c in counter if c is not nb_bins], 1))
+#get idx of greatest product
+max_idx = products.index(max(products))
+best_sol_idx = max_user_sol_idx[max_idx]
+best_sol = possible_solutions_capacity[best_sol_idx]
+best_sol_nb_allocated_items = max(nb_users_allocated)
+best_sol_product = max(products)
+best_sol_cpu_util = -math.log(max(products))/math.log(0.93)
