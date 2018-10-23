@@ -18,6 +18,7 @@ Objective:
 """
 from docplex.cp.model import CpoModel
 import numpy as np
+import math
     
 class Item(object):
     def __init__(self, id, size):
@@ -82,6 +83,7 @@ product_x = 1
 for bin in bins[0:len(bins)-1]:
     nb_items_in_bin = mdl.sum([(wheres[int(item.id)] == int(bin.id)) for item in items])
     x = mdl.conditional(nb_items_in_bin != 0, nb_items_in_bin, 1)
+    x = x/100
     product_x = mdl.times(product_x, x)
         
 mdl.add(mdl.maximize_static_lex([nb_allocated_items, product_x]))
@@ -93,6 +95,8 @@ msol.print_solution()
 print("Obj bounds: " + str(msol.get_objective_bounds()))
 print("Obj gaps: " + str(msol.get_objective_gaps()))
 print("Obj vals: " + str(msol.get_objective_values()))
+print("prodyuct",msol.get_objective_values()[1]*(100**len(bins)-1))
+print("CPU: " + str(-math.log(msol.get_objective_values()[1]*(100**len(bins)-1))/math.log(0.93)))
 mdl.export_as_cpo(out='cpo.txt')
 with open('log.txt', "w") as text_file:
     print(msol.get_solver_log(), file=text_file)
