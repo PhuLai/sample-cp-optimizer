@@ -8,7 +8,7 @@ Given:
         represented by a mxn binary matrix, 0: cannot be allocated, 1: can be allocated
 An item can be allocated to at most one bin that is big to store it.
 Objective:
-    - Maximize x_1 + x_2 + ... + x_n
+    - Maximize x_1 + x_2 + ... + x_n (not implemented in this example)
     - Maximize x_1 * x_2 + ... * x_n
     where x is the number of items allocated to bin i for all i in [1..n]
     
@@ -66,14 +66,14 @@ for item in items:
      
 #===============SETUP CONSTRAINTS===============   
 #one pack constraint for each dimension
-for k in range(4):
+for k in range(2):
     #each bin's load can range(0..bin size)
     loads = [mdl.integer_var(0,bins[int(bin.id)].size[k], name="sizeBin"+str(bin.id)+",d"+str(k)) for bin in bins]
     mdl.add(mdl.pack(loads, wheres, [item.size[k] for item in items]))
     
 #===============SETUP OBJECTIVE=============== 
 #maximize number of items allocated to all bins EXCEPT the big bin
-nb_allocated_items = mdl.sum([(wheres[int(item.id)] != nb_bins) for item in items])
+#nb_allocated_items = mdl.sum([(wheres[int(item.id)] != nb_bins) for item in items])
 
 #maximize x_1 * x_2 * ... *x_n, where x_1, x_2,..., x_n is the number of items in bin 1, 2, ..., n
 product_x = 1
@@ -86,14 +86,15 @@ for bin in bins[0:len(bins)-1]:
     product_x = mdl.times(product_x, x/10)
         
 #add lecicographic objs
-mdl.add(mdl.maximize_static_lex([nb_allocated_items, product_x]))
+#mdl.add(mdl.maximize_static_lex([nb_allocated_items, product_x]))
+mdl.add(mdl.maximize(product_x))
 
 #solve the problem and print the solution
 print("...solving...")
 msol = mdl.solve(url = None, key = None, TimeLimit = None, SearchType = 'Auto')
 msol.print_solution()
 print("Obj vals: " + str(msol.get_objective_values()))
-print("x_1 * x_2 * ... * x_n = ",msol.get_objective_values()[1]*(10**nb_bins))
+print("x_1 * x_2 * ... * x_n = ",msol.get_objective_values()[0]*(10**nb_bins))
 mdl.export_as_cpo(out='cpo.txt')
 with open('log.txt', "w") as text_file:
     print(msol.get_solver_log(), file=text_file)

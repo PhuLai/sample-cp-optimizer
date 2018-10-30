@@ -30,9 +30,9 @@ class Bin(object):
         self.size = size
         
 #===============IMPORT DATA===============
-items_data = np.loadtxt('set32-items.txt', dtype = np.integer, delimiter=',')
-bins_data = np.loadtxt('set32-bins.txt', dtype = np.integer, delimiter=',')
-alloc_constraint = np.loadtxt('set32-alloc-constraint.txt', dtype = np.integer, delimiter=',')
+items_data = np.loadtxt('set-items.txt', dtype = np.integer, delimiter=',')
+bins_data = np.loadtxt('set-bins.txt', dtype = np.integer, delimiter=',')
+alloc_constraint = np.loadtxt('set-alloc-constraint.txt', dtype = np.integer, delimiter=',')
 
 nb_bins = len(bins_data)
 nb_items = len(items_data)
@@ -95,4 +95,3 @@ best_sol_idx = max_user_sol_idx[max_idx]
 best_sol = possible_solutions_capacity[best_sol_idx]
 best_sol_nb_allocated_items = max(nb_users_allocated)
 best_sol_product = max(products)
-best_sol_cpu_util = -math.log(max(products))/math.log(0.93)

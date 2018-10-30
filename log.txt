@@ -1,26 +1,22 @@
  ! ----------------------------------------------------------------------------
- ! Maximization problem - 398 variables, 4 constraints
- ! Presolve      : 2 extractables eliminated, 1 constraint generated
- ! Initial process time : 0.01s (0.01s extraction + 0.00s propagation)
- !  . Log search space  : 296.0 (before), 296.0 (after)
- !  . Memory usage      : 1.4 MB (before), 1.4 MB (after)
+ ! Maximization problem - 38 variables, 2 constraints
+ ! Initial process time : 0.00s (0.00s extraction + 0.00s propagation)
+ !  . Log search space  : 50.5 (before), 50.5 (after)
+ !  . Memory usage      : 377.2 kB (before), 377.2 kB (after)
  ! Using parallel search with 4 workers.
  ! ----------------------------------------------------------------------------
  !          Best Branches  Non-fixed    W       Branch decision
-                        0        398                 -
- + New bound is 22; 0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000201553
-                        0        186    1            -
- + New bound is 22; 0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000100776
- *            22       22  0.02s        1      (gap = 0.00000%)
-   New objective is 22; 0.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000199999
+                        0         38                 -
+ + New bound is 0.0000000000144000
+ *  1.000000e-13       10  0.00s        1      (gap is 14.30%)
  ! ----------------------------------------------------------------------------
  ! Search completed, 1 solution found.
- ! Best objective         : 22; 0.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000199999 (optimal)
- ! Best bound             : 22; 0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000100776
- ! Number of branches     : 22
- ! Number of fails        : 7
- ! Total memory usage     : 4.8 MB (4.7 MB CP Optimizer + 0.1 MB Concert)
- ! Time spent in solve    : 0.02s (0.01s engine + 0.01s extraction)
- ! Search speed (br. / s) : 2000.0
+ ! Best objective         : 1e-13 (optimal - effective tol. is 1.000000e-09)
+ ! Best bound             : 0.0000000000144000
+ ! Number of branches     : 10
+ ! Number of fails        : 6
+ ! Total memory usage     : 1.2 MB (1.1 MB CP Optimizer + 0.0 MB Concert)
+ ! Time spent in solve    : 0.00s (0.00s engine + 0.00s extraction)
+ ! Search speed (br. / s) : 1000.0
  ! ----------------------------------------------------------------------------
 
