@@ -9,7 +9,7 @@ Given:
 An item can be allocated to at most one bin that is big to store it.
 Objective:
     - Maximize x_1 + x_2 + ... + x_n (not implemented in this example)
-    - Maximize x_1 * x_2 + ... * x_n
+    - Maximize x_1 * x_2 + ... * x_n (ignore empty bins)
     where x is the number of items allocated to bin i for all i in [1..n]
     
 """
@@ -80,9 +80,9 @@ product_x = 1
 for bin in bins[0:len(bins)-1]:
     #get the number of items in the bin
     nb_items_in_bin = mdl.sum([(wheres[int(item.id)] == int(bin.id)) for item in items])
-    #if the bin is empty, assume it has 1 item so that the product won't be zero
+    #if the bin is empty, assume it has 1 item so that the product won't be zero (ignore empty bins)
     x = mdl.conditional(nb_items_in_bin != 0, nb_items_in_bin, 1)
-    #divided by 10 so that CPO won't have to handle big integer
+    #divided by 10 so that CPO won't have to handle big integer, just in case many x are large
     product_x = mdl.times(product_x, x/10)
         
 #add lecicographic objs

@@ -4,20 +4,13 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 //--- Variables ---
-whereItem9 = intVar(2, 11, 13);
-whereItem8 = intVar(8, 9, 13);
-whereItem7 = intVar(6, 7, 13);
-whereItem6 = intVar(0, 3, 6, 7, 13);
-whereItem5 = intVar(3, 5, 13);
-whereItem4 = intVar(1, 4, 13);
-whereItem3 = intVar(2, 10, 11, 13);
-whereItem2 = intVar(2, 11, 13);
-whereItem1 = intVar(5, 13);
-whereItem0 = intVar(12, 13);
-"sizeBin13,d0" = intVar(0..10);
-"sizeBin12,d0" = intVar(0..2);
-"sizeBin11,d0" = intVar(0..1);
-"sizeBin10,d0" = intVar(0..2);
+whereItem5 = intVar(6, 7, 10);
+whereItem4 = intVar(0, 3, 6, 7, 10);
+whereItem3 = intVar(3, 5, 10);
+whereItem2 = intVar(1, 4, 10);
+whereItem1 = intVar(2, 10);
+whereItem0 = intVar(2, 10);
+"sizeBin10,d0" = intVar(0..6);
 "sizeBin9,d0" = intVar(0..2);
 "sizeBin8,d0" = intVar(0..2);
 "sizeBin7,d0" = intVar(0..3);
@@ -28,16 +21,13 @@ whereItem0 = intVar(12, 13);
 "sizeBin2,d0" = intVar(0..1);
 "sizeBin1,d0" = intVar(0..1);
 "sizeBin0,d0" = intVar(0..1);
-"sizeBin13,d1" = intVar(0..10);
-"sizeBin12,d1" = intVar(0..2);
-"sizeBin11,d1" = intVar(0..1);
-"sizeBin10,d1" = intVar(0..2);
+"sizeBin10,d1" = intVar(0..6);
 "sizeBin9,d1" = intVar(0..2);
 "sizeBin8,d1" = intVar(0..1);
 "sizeBin7,d1" = intVar(0..2);
 "sizeBin6,d1" = intVar(0..1);
 "sizeBin5,d1" = intVar(0..1);
-"sizeBin4,d1" = intVar(0..3);
+"sizeBin4,d1" = intVar(0..1);
 "sizeBin3,d1" = intVar(0..1);
 "sizeBin2,d1" = intVar(0..1);
 "sizeBin1,d1" = intVar(0..1);
@@ -45,22 +35,19 @@ whereItem0 = intVar(12, 13);
 
 //--- Expressions ---
 #line 72 "C:/Users/tlai/Desktop/workspace-spyder/sample-cp-optimizer/bin-packing-variant.py"
-_EXP_1 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
-_EXP_30 = [whereItem0, whereItem1, whereItem2, whereItem3, whereItem4, whereItem5, whereItem6, whereItem7, whereItem8, whereItem9];
-pack(["sizeBin0,d0", "sizeBin1,d0", "sizeBin2,d0", "sizeBin3,d0", "sizeBin4,d0", "sizeBin5,d0", "sizeBin6,d0", "sizeBin7,d0", "sizeBin8,d0", "sizeBin9,d0", "sizeBin10,d0", "sizeBin11,d0", "sizeBin12,d0", "sizeBin13,d0"], _EXP_30, _EXP_1);
-pack(["sizeBin0,d1", "sizeBin1,d1", "sizeBin2,d1", "sizeBin3,d1", "sizeBin4,d1", "sizeBin5,d1", "sizeBin6,d1", "sizeBin7,d1", "sizeBin8,d1", "sizeBin9,d1", "sizeBin10,d1", "sizeBin11,d1", "sizeBin12,d1", "sizeBin13,d1"], _EXP_30, _EXP_1);
+_EXP_1 = [1, 1, 1, 1, 1, 1];
+_EXP_236 = [whereItem0, whereItem1, whereItem2, whereItem3, whereItem4, whereItem5];
+pack(["sizeBin0,d0", "sizeBin1,d0", "sizeBin2,d0", "sizeBin3,d0", "sizeBin4,d0", "sizeBin5,d0", "sizeBin6,d0", "sizeBin7,d0", "sizeBin8,d0", "sizeBin9,d0", "sizeBin10,d0"], _EXP_236, _EXP_1);
+pack(["sizeBin0,d1", "sizeBin1,d1", "sizeBin2,d1", "sizeBin3,d1", "sizeBin4,d1", "sizeBin5,d1", "sizeBin6,d1", "sizeBin7,d1", "sizeBin8,d1", "sizeBin9,d1", "sizeBin10,d1"], _EXP_236, _EXP_1);
 #line 90
-_EXP_31 = sum([whereItem0 == 0, whereItem1 == 0, whereItem2 == 0, whereItem3 == 0, whereItem4 == 0, whereItem5 == 0, whereItem6 == 0, whereItem7 == 0, whereItem8 == 0, whereItem9 == 0]);
-_EXP_32 = sum([whereItem0 == 1, whereItem1 == 1, whereItem2 == 1, whereItem3 == 1, whereItem4 == 1, whereItem5 == 1, whereItem6 == 1, whereItem7 == 1, whereItem8 == 1, whereItem9 == 1]);
-_EXP_33 = sum([whereItem0 == 2, whereItem1 == 2, whereItem2 == 2, whereItem3 == 2, whereItem4 == 2, whereItem5 == 2, whereItem6 == 2, whereItem7 == 2, whereItem8 == 2, whereItem9 == 2]);
-_EXP_34 = sum([whereItem0 == 3, whereItem1 == 3, whereItem2 == 3, whereItem3 == 3, whereItem4 == 3, whereItem5 == 3, whereItem6 == 3, whereItem7 == 3, whereItem8 == 3, whereItem9 == 3]);
-_EXP_35 = sum([whereItem0 == 4, whereItem1 == 4, whereItem2 == 4, whereItem3 == 4, whereItem4 == 4, whereItem5 == 4, whereItem6 == 4, whereItem7 == 4, whereItem8 == 4, whereItem9 == 4]);
-_EXP_36 = sum([whereItem0 == 5, whereItem1 == 5, whereItem2 == 5, whereItem3 == 5, whereItem4 == 5, whereItem5 == 5, whereItem6 == 5, whereItem7 == 5, whereItem8 == 5, whereItem9 == 5]);
-_EXP_37 = sum([whereItem0 == 6, whereItem1 == 6, whereItem2 == 6, whereItem3 == 6, whereItem4 == 6, whereItem5 == 6, whereItem6 == 6, whereItem7 == 6, whereItem8 == 6, whereItem9 == 6]);
-_EXP_38 = sum([whereItem0 == 7, whereItem1 == 7, whereItem2 == 7, whereItem3 == 7, whereItem4 == 7, whereItem5 == 7, whereItem6 == 7, whereItem7 == 7, whereItem8 == 7, whereItem9 == 7]);
-_EXP_39 = sum([whereItem0 == 8, whereItem1 == 8, whereItem2 == 8, whereItem3 == 8, whereItem4 == 8, whereItem5 == 8, whereItem6 == 8, whereItem7 == 8, whereItem8 == 8, whereItem9 == 8]);
-_EXP_40 = sum([whereItem0 == 9, whereItem1 == 9, whereItem2 == 9, whereItem3 == 9, whereItem4 == 9, whereItem5 == 9, whereItem6 == 9, whereItem7 == 9, whereItem8 == 9, whereItem9 == 9]);
-_EXP_41 = sum([whereItem0 == 10, whereItem1 == 10, whereItem2 == 10, whereItem3 == 10, whereItem4 == 10, whereItem5 == 10, whereItem6 == 10, whereItem7 == 10, whereItem8 == 10, whereItem9 == 10]);
-_EXP_42 = sum([whereItem0 == 11, whereItem1 == 11, whereItem2 == 11, whereItem3 == 11, whereItem4 == 11, whereItem5 == 11, whereItem6 == 11, whereItem7 == 11, whereItem8 == 11, whereItem9 == 11]);
-_EXP_43 = sum([whereItem0 == 12, whereItem1 == 12, whereItem2 == 12, whereItem3 == 12, whereItem4 == 12, whereItem5 == 12, whereItem6 == 12, whereItem7 == 12, whereItem8 == 12, whereItem9 == 12]);
-maximize(1 * (element(_EXP_31 != 0, [1, _EXP_31]) / 10) * (element(_EXP_32 != 0, [1, _EXP_32]) / 10) * (element(_EXP_33 != 0, [1, _EXP_33]) / 10) * (element(_EXP_34 != 0, [1, _EXP_34]) / 10) * (element(_EXP_35 != 0, [1, _EXP_35]) / 10) * (element(_EXP_36 != 0, [1, _EXP_36]) / 10) * (element(_EXP_37 != 0, [1, _EXP_37]) / 10) * (element(_EXP_38 != 0, [1, _EXP_38]) / 10) * (element(_EXP_39 != 0, [1, _EXP_39]) / 10) * (element(_EXP_40 != 0, [1, _EXP_40]) / 10) * (element(_EXP_41 != 0, [1, _EXP_41]) / 10) * (element(_EXP_42 != 0, [1, _EXP_42]) / 10) * (element(_EXP_43 != 0, [1, _EXP_43]) / 10));
+_EXP_237 = sum([whereItem0 == 0, whereItem1 == 0, whereItem2 == 0, whereItem3 == 0, whereItem4 == 0, whereItem5 == 0]);
+_EXP_238 = sum([whereItem0 == 1, whereItem1 == 1, whereItem2 == 1, whereItem3 == 1, whereItem4 == 1, whereItem5 == 1]);
+_EXP_239 = sum([whereItem0 == 2, whereItem1 == 2, whereItem2 == 2, whereItem3 == 2, whereItem4 == 2, whereItem5 == 2]);
+_EXP_240 = sum([whereItem0 == 3, whereItem1 == 3, whereItem2 == 3, whereItem3 == 3, whereItem4 == 3, whereItem5 == 3]);
+_EXP_241 = sum([whereItem0 == 4, whereItem1 == 4, whereItem2 == 4, whereItem3 == 4, whereItem4 == 4, whereItem5 == 4]);
+_EXP_242 = sum([whereItem0 == 5, whereItem1 == 5, whereItem2 == 5, whereItem3 == 5, whereItem4 == 5, whereItem5 == 5]);
+_EXP_243 = sum([whereItem0 == 6, whereItem1 == 6, whereItem2 == 6, whereItem3 == 6, whereItem4 == 6, whereItem5 == 6]);
+_EXP_244 = sum([whereItem0 == 7, whereItem1 == 7, whereItem2 == 7, whereItem3 == 7, whereItem4 == 7, whereItem5 == 7]);
+_EXP_245 = sum([whereItem0 == 8, whereItem1 == 8, whereItem2 == 8, whereItem3 == 8, whereItem4 == 8, whereItem5 == 8]);
+_EXP_246 = sum([whereItem0 == 9, whereItem1 == 9, whereItem2 == 9, whereItem3 == 9, whereItem4 == 9, whereItem5 == 9]);
+maximize(1 * (element(_EXP_237 != 0, [1, _EXP_237]) / 10) * (element(_EXP_238 != 0, [1, _EXP_238]) / 10) * (element(_EXP_239 != 0, [1, _EXP_239]) / 10) * (element(_EXP_240 != 0, [1, _EXP_240]) / 10) * (element(_EXP_241 != 0, [1, _EXP_241]) / 10) * (element(_EXP_242 != 0, [1, _EXP_242]) / 10) * (element(_EXP_243 != 0, [1, _EXP_243]) / 10) * (element(_EXP_244 != 0, [1, _EXP_244]) / 10) * (element(_EXP_245 != 0, [1, _EXP_245]) / 10) * (element(_EXP_246 != 0, [1, _EXP_246]) / 10));
